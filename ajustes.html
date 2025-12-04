@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajustes y Configuración - Raúl Fisioterapeuta</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="settings-sidebar">
+        <div class="profile">
+          <img
+            src="images/icono-perfil.png"
+            alt="Avatar de Raúl"
+            class="profile-avatar"
+          />
+          <div>
+            <p>Raúl</p>
+            <span>Fisioterapeuta</span>
+          </div>
+        </div>
+
+        <nav class="settings-nav">
+          <ul>
+            <li>
+              <a href="#general" class="setting-nav-item active">
+                <img
+                  src="images/icono ajustes.png"
+                  alt="General"
+                  class="setting-icon"
+                />
+                General
+              </a>
+            </li>
+            <li>
+              <a href="#notificaciones" class="setting-nav-item">
+                <img
+                  src="images/icono-notificaciones.png"
+                  alt="Notificaciones"
+                  class="setting-icon"
+                />
+                Notificaciones
+              </a>
+            </li>
+            <li>
+              <a href="#whatsapp" class="setting-nav-item">
+                <img
+                  src="images/icono-mensajes.png"
+                  alt="WhatsApp"
+                  class="setting-icon"
+                />
+                WhatsApp
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="btn-logout">Cerrar sesión</button>
+      </aside>
+
+      <main class="main-content settings-content">
+        <header class="content-header">
+          <h2>Configuración</h2>
+          <p>Ajustar las preferencias del sistema, notificaciones y mensajes</p>
+        </header>
+
+        <section id="general" class="settings-section">
+          <h3>Perfil</h3>
+          <div class="profile-settings-card card">
+            <div class="profile-info-row">
+              <img
+                src="images/icono-perfil.png"
+                alt="Avatar de Raúl"
+                class="profile-avatar-large"
+              />
+              <div class="profile-text-info">
+                <p class="name-bold">Raúl</p>
+                <span class="email-small">correo@gmail.com</span>
+              </div>
+              <button class="btn-secondary btn-cambiar-foto">
+                Cambiar foto
+              </button>
+            </div>
+
+            <div class="form-grid">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" value="Raúl" />
+
+              <label for="correo">Correo</label>
+              <input type="email" id="correo" value="correo@gmail.com" />
+
+              <label for="idioma">Idioma</label>
+              <select id="idioma">
+                <option>Español</option>
+              </select>
+
+              <label for="fecha">Formato de fecha</label>
+              <select id="fecha">
+                <option>DD/MM/AAAA</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section id="notificaciones" class="settings-section">
+          <h3>Notificaciones</h3>
+          <div class="notifications-card card">
+            <div class="toggle-row">
+              <p>Nuevos clientes registrados</p>
+              <span
+                >Enviar una notificación cuando un nuevo cliente se
+                registre.</span
+              >
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+            <div class="toggle-row">
+              <p>Citas próximas</p>
+              <span
+                >Recordatorios para citas agendadas en las próximas 24
+                horas.</span
+              >
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+            <div class="toggle-row">
+              <p>Mensajes de clientes</p>
+              <span
+                >Notificar cuando recibas un nuevo mensaje de un cliente.</span
+              >
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section id="whatsapp" class="settings-section">
+          <h3>Integración con WhatsApp</h3>
+          <div class="whatsapp-card card">
+            <div class="connection-status">
+              <span class="status-indicator status-ok"></span>
+              <p>Estado de la conexión</p>
+              <span class="status-message">Conectado correctamente</span>
+              <button class="btn-disconnect">Desconectar</button>
+            </div>
+
+            <p class="section-subtitle">Mensaje de bienvenida automatizado</p>
+            <span class="section-description"
+              >Este mensaje se envía a los clientes nuevos cuando se
+              registran.</span
+            >
+
+            <label for="cuerpo">Cuerpo del mensaje</label>
+            <textarea id="cuerpo" rows="5">
+¡Hola [NOMBRE_CLIENTE]! Bienvenido. Soy Raúl, tu fisioterapeuta. Gracias por ponerte en contacto, primero me gustarías saber algunas cosas sobre ti, necesito que me respondas con tu altura y peso estimados.</textarea
+            >
+          </div>
+        </section>
+
+        <div class="fixed-bottom-actions">
+          <a href="dashboard.html" class="btn-secondary fixed-action-btn">Cancelar</a>
+          <a href="dashboard.html" class="btn-primary fixed-action-btn">Guardar cambios</a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

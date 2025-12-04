@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Clientes - Raúl Fisioterapeuta</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="profile">
+          <img
+            src="images/icono-perfil.png"
+            alt="Avatar de Raúl"
+            class="profile-avatar"
+          />
+          <div>
+            <p>Raúl</p>
+            <span>Fisioterapeuta</span>
+          </div>
+        </div>
+
+        <nav class="menu-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html" class="nav-item">
+                <img
+                  src="images/icono-dashboard.png"
+                  alt="Icono Dashboard"
+                  class="nav-icon"
+                />
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="clientes.html" class="nav-item active">
+                <img
+                  src="images/icono-clientes.png"
+                  alt="Icono Clientes"
+                  class="nav-icon"
+                />
+                Clientes
+              </a>
+            </li>
+            <li>
+              <a href="rutinas.html" class="nav-item">
+                <img
+                  src="images/icono-rutinas.png"
+                  alt="Icono Rutinas"
+                  class="nav-icon"
+                />
+                Rutinas
+              </a>
+            </li>
+            <li>
+              <a href="asignar.html" class="nav-item">
+                <img
+                  src="images/icono asignar.png"
+                  alt="Icono Asignar"
+                  class="nav-icon"
+                />
+                Asignar
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <a href="ajustes.html" class="settings-link">
+          <img
+            src="images/icono ajustes.png"
+            alt="Icono Ajustes"
+            class="nav-icon"
+          />
+          Ajustes
+        </a>
+      </aside>
+
+      <main class="main-content">
+        <!-- <div class="content-header-client">
+                <div>
+                    <h2>Gestión de clientes</h2>
+                    <p>Busca, filtra y gestiona la información de todos tus clientes</p>
+                </div>
+                <div class="top-nav-icons">
+                    <a href="#" class="top-nav-link">Dashboard</a>
+                    <a href="#" class="top-nav-link active-top">Clientes</a>
+                    <a href="#" class="top-nav-link">Rutinas</a>
+                    <a href="#" class="top-nav-link">Calendario</a>
+                    <img src="images/icono ajustes.png" alt="Ajustes" class="top-icon">
+                </div>
+            </div> -->
+
+        <header class="content-header">
+          <h2>Gestión de clientes</h2>
+          <p>Busca, filtra y gestiona la información de todos tus clientes</p>
+        </header>
+
+        <div class="action-bar">
+          <div class="search-bar search-clientes">
+            <img
+              src="images/icono-buscar.png"
+              alt="Icono Buscar"
+              class="search-icon"
+            />
+            <input type="text" placeholder="Buscar por nombre o apellido..." />
+          </div>
+
+          <button class="btn-filter">Filtros</button>
+
+          <button class="btn-primary btn-add-client">+ Añadir cliente</button>
+        </div>
+
+        <div class="client-table-container">
+          <table class="client-table">
+            <thead class="table-header-rounded">
+              <tr>
+                <th>Nombre completo</th>
+                <th>Identificación</th>
+                <th>Última visita</th>
+                <th>Estado</th>
+                <th>Objetivos principales</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-row-card">
+                <td class="client-name-cell">Carlos Gonzalez</td>
+                <td>1111111</td>
+                <td>09/11/2025</td>
+                <td><span class="status status-active">Activo</span></td>
+                <td>Rehabilitación de rodilla</td>
+                <td class="action-menu">...</td>
+              </tr>
+              <tr class="table-row-card">
+                <td class="client-name-cell">Ana Torres</td>
+                <td>2222222</td>
+                <td>09/11/2025</td>
+                <td><span class="status status-active">Activo</span></td>
+                <td>Por asignar...</td>
+                <td class="action-menu">...</td>
+              </tr>
+              <tr class="table-row-card">
+                <td class="client-name-cell">Josué Vargas</td>
+                <td>3333333</td>
+                <td>10/11/2025</td>
+                <td><span class="status status-warning">Lesionado</span></td>
+                <td>Liberación miofascial</td>
+                <td class="action-menu">...</td>
+              </tr>
+              <tr class="table-row-card">
+                <td class="client-name-cell">Javier Lopéz</td>
+                <td>4444444</td>
+                <td>10/11/2025</td>
+                <td><span class="status status-inactive">Inactivo</span></td>
+                <td>Prevención de lesiones</td>
+                <td class="action-menu">...</td>
+              </tr>
+              <tr class="table-row-card">
+                <td class="client-name-cell">Elena García</td>
+                <td>5555555</td>
+                <td>11/11/2025</td>
+                <td><span class="status status-active">Activo</span></td>
+                <td>Fortalecimiento lumbar</td>
+                <td class="action-menu">...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination-footer">
+          <p>Mostrando 1 a 5 de 20 resultados</p>
+          <div class="pagination-buttons">
+            <button class="btn-secondary">Anterior</button>
+            <button class="btn-secondary active">Siguiente</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

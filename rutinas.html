@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Rutinas - Raúl Fisioterapeuta</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="images/icono-perfil.png" alt="Avatar de Raúl" class="profile-avatar"> 
+                <div>
+                    <p>Raúl</p>
+                    <span>Fisioterapeuta</span>
+                </div>
+            </div>
+            
+            <nav class="menu-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="nav-item"><img src="images/icono-dashboard.png" alt="Icono Dashboard" class="nav-icon"> Dashboard</a></li>
+                    <li><a href="clientes.html" class="nav-item"><img src="images/icono-clientes.png" alt="Icono Clientes" class="nav-icon"> Clientes</a></li>
+                    <li><a href="rutinas.html" class="nav-item active"><img src="images/icono-rutinas.png" alt="Icono Rutinas" class="nav-icon"> Rutinas</a></li>
+                    <li><a href="asignar.html" class="nav-item"><img src="images/icono asignar.png" alt="Icono Asignar" class="nav-icon"> Asignar</a></li>
+                </ul>
+            </nav>
+            
+            <a href="ajustes.html" class="settings-link"><img src="images/icono ajustes.png" alt="Icono Ajustes" class="nav-icon"> Ajustes</a>
+        </aside>
+        
+        <main class="main-content routines-app-grid">
+            
+            <section class="my-routines-panel card">
+                <h3>Mis rutinas</h3>
+                <div class="search-bar search-routines">
+                    <img src="images/icono-buscar.png" alt="Icono Buscar" class="search-icon-small">
+                    <input type="text" placeholder="Buscar rutina...">
+                </div>
+                
+                <button class="btn-primary btn-new-routine">
+                    + Crear nueva rutina
+                </button>
+
+                <ul class="routine-list">
+                    <li class="routine-item active">
+                        <img src="images/icono-pesa.png" alt="Icono Rutina" class="routine-icon">
+                        <span>Rehabilitación...</span>
+                        <button class="action-dots">...</button>
+                    </li>
+                    <li class="routine-item">
+                        <img src="images/icono-pesa.png" alt="Icono Rutina" class="routine-icon">
+                        <span>Fortalecimiento...</span>
+                        <button class="action-dots">...</button>
+                    </li>
+                    <li class="routine-item">
+                        <img src="images/icono-pesa.png" alt="Icono Rutina" class="routine-icon">
+                        <span>Movilidad...</span>
+                        <button class="action-dots">...</button>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="editor-panel">
+                <div class="editor-content card">
+                    <h3>Editando: Rehabilitación de muñeca - Fase 1</h3>
+                    
+                    <input type="text" value="Rehabilitación de muñeca - Fase 1" class="editor-title-input">
+                    <textarea class="editor-description">Rutina inicial para recuperar la movilidad y fuerza después de una lesión del túnel del carpo.</textarea>
+                    
+                    <div class="exercise-block">
+                        <img src="images/icono-6-puntos.png" alt="Mover" class="drag-handle-icon"> 
+                        <h4 class="exercise-title">Flexión de la muñeca (adelante y atrás)</h4>
+                        <button class="delete-exercise"></button>
+                        <div class="exercise-params">
+                            <div>Series</div>
+                            <div>Repeticiones</div>
+                            <div>Descanso (seg)</div>
+                        </div>
+                        <div class="exercise-inputs">
+                            <input type="number" value="3">
+                            <input type="number" value="10">
+                            <input type="number" value="30">
+                        </div>
+                    </div>
+
+                    <div class="exercise-block">
+                        <img src="images/icono-6-puntos.png" alt="Mover" class="drag-handle-icon"> 
+                        <h4 class="exercise-title">Doblar los dedos</h4>
+                        <button class="delete-exercise"></button>
+                        </div>
+
+                    <div class="drag-placeholder">
+                        <img src="images/icono-añadir.png" alt="Añadir" class="plus-icon-img">
+                        <p>Arrastra un ejercicio desde la biblioteca para comenzar a construir la rutina.</p>
+                    </div>
+
+                    <div class="editor-actions">
+                        <button class="btn-secondary">Cancelar</button>
+                        <button class="btn-primary">Guardar rutina</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="library-panel card">
+                <h3>Biblioteca de ejercicios</h3>
+                <div class="search-bar search-library">
+                    <img src="images/icono-buscar.png" alt="Icono Buscar" class="search-icon-small">
+                    <input type="text" placeholder="Buscar ejercicio...">
+                </div>
+
+                <div class="category-filters">
+                    <button class="btn-category active">Todos</button>
+                    <button class="btn-category">Muñecas</button>
+                    <button class="btn-category">Tren superior</button>
+                    <button class="btn-category">Cardio</button>
+                </div>
+
+                <ul class="exercise-library-list">
+                    <li class="library-item">
+                        <img src="images/icono-3-lineas.png" alt="Mover" class="drag-handle-icon-small">
+                        Sentadilla con...
+                    </li>
+                    <li class="library-item">
+                        <img src="images/icono-3-lineas.png"" alt="Mover" class="drag-handle-icon-small">
+                        Plancha frontal
+                    </li>
+                    <li class="library-item">
+                        <img src="images/icono-3-lineas.png"" alt="Mover" class="drag-handle-icon-small">
+                        Press de banca
+                    </li>
+                    </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Raúl Fisioterapeuta</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="images/icono-perfil.png" alt="Avatar de Raúl" class="profile-avatar"> 
+                <div>
+                    <p>Raúl</p>
+                    <span>Fisioterapeuta</span>
+                </div>
+            </div>
+            
+            <nav class="menu-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html" class="nav-item active">
+                            <img src="images/icono-dashboard.png" alt="Icono Dashboard" class="nav-icon"> 
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="clientes.html" class="nav-item">
+                            <img src="images/icono-clientes.png" alt="Icono Clientes" class="nav-icon"> 
+                            Clientes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rutinas.html" class="nav-item">
+                            <img src="images/icono-rutinas.png" alt="Icono Rutinas" class="nav-icon"> 
+                            Rutinas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="asignar.html" class="nav-item">
+                            <img src="images/icono asignar.png" alt="Icono Asignar" class="nav-icon"> 
+                            Asignar
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <a href="ajustes.html" class="settings-link">
+                <img src="images/icono ajustes.png" alt="Icono Ajustes" class="nav-icon"> 
+                Ajustes
+            </a>
+        </aside>
+        
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Resumen general</h2>
+                <p>Bienvenido, aquí tienes un resumen de tu día</p>
+            </header>
+            
+            <div class="search-bar">
+                <img src="images/icono-buscar.png" alt="Icono Buscar" class="search-icon">
+                <input type="text" placeholder="Buscar clientes o rutinas...">
+            </div>
+            
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <p>Clientes activos</p>
+                    <strong>20</strong>
+                </div>
+                <div class="metric-card">
+                    <p>Rutinas asignadas</p>
+                    <strong>10</strong>
+                </div>
+                <div class="metric-card">
+                    <p>Citas para hoy</p>
+                    <strong>5</strong>
+                </div>
+            </section>
+
+            <section class="bottom-sections">
+                <div class="card next-appointments">
+                    <h3>Próximas citas</h3>
+                    
+                    <div class="appointment-item">
+                        <div class="user-info">
+                            <img src="images/icono-perfil.png" alt="Avatar Cliente" class="user-avatar">
+                            <div>
+                                <p class="name">Carlos Gonzalez</p>
+                                <span class="detail">Sesión de seguimiento</span>
+                            </div>
+                        </div>
+                        <div class="time-info">
+                            <p class="time">9:30 AM</p>
+                            <span class="duration">30 min</span>
+                        </div>
+                    </div>
+
+                    </div>
+                
+                <div class="card pending-tasks">
+                    <h3>Tareas pendientes</h3>
+                    <div class="task-item">
+                        <input type="checkbox" id="task1">
+                        <label for="task1">Actualizar historial clínico de Ana Josué Vargas</label>
+                    </div>
+                    <div class="task-item checked">
+                        <input type="checkbox" id="task2" checked>
+                        <label for="task2">Confirmar cita con Carlos Gonzalez</label>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
