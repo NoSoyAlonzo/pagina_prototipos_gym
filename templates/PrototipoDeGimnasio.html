@@ -318,6 +318,379 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ESTILOS NUEVOS PARA LA TABLA DE RUTINAS */
+
+        /* Contenedor para alinear el badge y el botón en la misma celda */
+        .action-cell {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* Espacio entre el badge y el botón */
+        }
+
+        /* Badge Rojo para estado "Pendiente" */
+        .badge-pending {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Botón Morado (Activo) */
+        .btn-purple {
+            background-color: #310b71; /* Morado oscuro como la imagen */
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px; /* Bordes muy redondeados como la imagen */
+            border: none;
+            font-size: 13px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap; /* Evita que el texto del botón se parta */
+            transition: background 0.3s;
+        }
+
+        .btn-purple:hover {
+            background-color: #4c1d95;
+        }
+
+        /* Estilo para cuando el botón está deshabilitado */
+        .btn-purple:disabled {
+            background-color: #9ca3af; /* Gris */
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        /* ESTILOS PARA LA PANTALLA DE ACTUALIZACIÓN DE CLIENTE */
+
+        .client-info-header {
+            margin-bottom: 32px;
+            font-size: 16px;
+            color: #1f2937;
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: white;
+            padding: 0; /* Quitamos padding del contenedor para que el azul llegue al borde */
+        }
+
+        .info-column h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 24px;
+            color: #000;
+        }
+
+        .info-row {
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+
+        .info-label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            color: #000;
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            color: #374151;
+        }
+
+        /* La clase mágica para el fondo azul */
+        .highlight-change {
+            background-color: #bfdbfe; /* Azul claro similar a tu imagen */
+            margin-left: -16px; /* Trucos para que el fondo se vea más ancho */
+            margin-right: -16px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .photo-placeholder {
+            width: 150px;
+            height: 120px;
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #9ca3af;
+            margin-top: 8px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .btn-cancel {
+            background: white;
+            border: 1px solid #d1d5db;
+            color: #374151;
+            width: auto;
+            padding: 10px 24px;
+        }
+
+        .btn-continue {
+            background-color: #310b71; /* Morado oscuro */
+            color: white;
+            width: auto;
+            padding: 10px 24px;
+        }
+
+        /* ESTILOS PARA LA PANTALLA DE ASIGNAR RUTINA */
+
+        /* Grid de dos columnas */
+        .assign-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .assign-container { grid-template-columns: 1fr; }
+        }
+
+        /* Tarjetas de Pasos */
+        .step-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 24px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .step-card h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #111827;
+        }
+
+        /* Resumen morado claro */
+        .assignment-summary {
+            background-color: #ede9fe; /* Lila muy suave */
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 24px;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .summary-text { font-size: 14px; line-height: 1.6; color: #4c1d95; }
+        .summary-text strong { color: #2e1065; }
+
+        /* Lista de Sesiones */
+        .session-list { display: flex; flex-direction: column; gap: 12px; }
+
+        .session-item {
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Estados de las sesiones */
+        .session-success { background-color: #ecfdf5; border-color: #a7f3d0; }
+        .session-missed { background-color: #fef2f2; border-color: #fecaca; }
+
+        .session-title { font-weight: bold; font-size: 14px; display: block; }
+        .session-date { font-size: 12px; margin-top: 4px; display: block; }
+
+        /* Colores de texto según estado */
+        .text-success { color: #065f46; }
+        .text-danger { color: #991b1b; }
+        .text-gray { color: #4b5563; }
+
+        /* PANEL LATERAL (Info del cliente) */
+        .side-panel-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+            display: none; /* Oculto por defecto */
+        }
+
+        .side-panel {
+            position: fixed;
+            top: 0; right: 0;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 201;
+            transform: translateX(100%); /* Fuera de pantalla */
+            transition: transform 0.3s ease-in-out;
+            padding: 32px;
+            overflow-y: auto;
+        }
+
+        .side-panel.open { transform: translateX(0); }
+        .side-panel-overlay.open { display: block; }
+
+        .close-panel-btn {
+            background: none; border: none; font-size: 24px; cursor: pointer;
+            position: absolute; top: 20px; right: 20px; color: #6b7280;
+        }
+
+        /* Botón de la cabecera (Icono de lista) */
+        .header-icon-btn {
+            background: white; border: 1px solid #e5e7eb;
+            border-radius: 8px; width: 40px; height: 40px;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-size: 20px; color: #1f2937; margin-left: auto; /* Empuja a la derecha */
+        }
+        .header-icon-btn:hover { background-color: #f9fafb; }
+
+        /* ESTILOS PARA LA AGENDA / CALENDARIO */
+
+        .calendar-wrapper {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+
+        .calendar-header-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales */
+            background-color: #f3f4f6;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .day-header {
+            padding: 16px;
+            text-align: center;
+            font-weight: bold;
+            color: #9ca3af;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .calendar-body {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            min-height: 500px; /* Altura mínima para que se vea bien */
+            background-color: #e5e7eb; /* Color de las líneas divisorias */
+            gap: 1px; /* Crea el efecto de líneas de cuadrícula */
+        }
+
+        .day-column {
+            background-color: white;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Tarjetas de Citas */
+        .appt-card {
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 13px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .appt-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .appt-time { font-weight: bold; margin-bottom: 4px; display: block; }
+        .appt-client { font-weight: 600; font-size: 14px; display: block; margin-bottom: 2px; }
+        .appt-staff { font-size: 12px; opacity: 0.8; }
+
+        /* Colores específicos de la imagen */
+        .card-green { background-color: #86efac; color: #14532d; }
+        .card-blue { background-color: #60a5fa; color: #1e3a8a; }
+        .card-red { background-color: #fca5a5; color: #7f1d1d; }
+
+        /* Botón flotante para añadir cita (estilo morado oscuro) */
+        .btn-add-appt {
+            background-color: #310b71;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ESTILOS PARA LA NOTIFICACIÓN / MODAL */
+
+        /* Fondo oscuro transparente */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Oculto por defecto */
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+        }
+
+        /* Caja de la alerta */
+        .modal-box {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 20px 25px rgba(0,0,0,0.2);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-title { font-size: 24px; font-weight: bold; margin-bottom: 16px; color: #000; }
+        .modal-text { color: #6b7280; font-size: 16px; line-height: 1.5; margin-bottom: 32px; }
+
+        .modal-buttons { display: flex; justify-content: flex-end; gap: 24px; }
+        .btn-text-gray { background: none; border: none; color: #9ca3af; font-size: 16px; cursor: pointer; }
+        .btn-text-blue { background: none; border: none; color: #3b82f6; font-size: 16px; font-weight: bold; cursor: pointer; }
+
+        /* Animación para eliminar la cita */
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; transform: scale(0.9); height: 0; padding: 0; margin: 0; }
+        }
+
+        /* Espacio libre (que aparece tras borrar) */
+        .free-slot {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 12px;
+            color: #9ca3af;
+            text-align: center;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            background-color: #f9fafb;
+            animation: fadeIn 0.5s;
+        }
     </style>
 </head>
 <body>
@@ -356,6 +729,7 @@
                 <button class="active" onclick="changePage('dashboard')">Dashboard</button>
                 <button onclick="changePage('clients')">Clientes</button>
                 <button onclick="changePage('routines')">Rutinas</button>
+                <button onclick="changePage('agenda')">Agenda</button>
                 <button onclick="changePage('settings')">Configuración</button>
             </nav>
         </div>
@@ -371,7 +745,7 @@
 
             <div class="content">
                 <h2 class="title">Resumen general</h2>
-                
+
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-label">Clientes activos</div>
@@ -428,6 +802,7 @@
                 <button onclick="changePage('dashboard')">Dashboard</button>
                 <button class="active" onclick="changePage('clients')">Clientes</button>
                 <button onclick="changePage('routines')">Rutinas</button>
+                <button onclick="changePage('agenda')">Agenda</button>
                 <button onclick="changePage('settings')">Configuración</button>
             </nav>
         </div>
@@ -443,7 +818,7 @@
 
             <div class="content">
                 <h2 class="title">Gestión de clientes</h2>
-                
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -488,6 +863,7 @@
                 <button onclick="changePage('dashboard')">Dashboard</button>
                 <button onclick="changePage('clients')">Clientes</button>
                 <button class="active" onclick="changePage('routines')">Rutinas</button>
+                <button onclick="changePage('agenda')">Agenda</button>
                 <button onclick="changePage('settings')">Configuración</button>
             </nav>
         </div>
@@ -503,31 +879,438 @@
 
             <div class="content">
                 <h2 class="title">Rutinas activas</h2>
-                
+
                 <table class="table">
                     <thead>
                         <tr>
                             <th>Cliente</th>
                             <th>Descripción</th>
-                            <th>Fecha</th>
-                            <th>Estado</th>
+                            <th>Siguiente actualización</th>
+                            <th>Información enviada</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Carlos González</td>
-                            <td>Fortalecimiento</td>
-                            <td>09/11/2025</td>
-                            <td><span class="badge badge-success">Activo</span></td>
+                            <td style="font-weight: bold;">Carlos González</td>
+                            <td style="color: #6b7280;">Fortalecimiento</td>
+                            <td style="color: #6b7280;">09/11/2025</td>
+                            <td>
+                                <div class="action-cell">
+                                    <span class="badge badge-success">Enviado</span>
+                                    <button class="btn-purple" onclick="goToUpdate('Carlos González')">Actualizar rutina</button>
+                                </div>
+                            </td>
                         </tr>
+
                         <tr>
-                            <td>Ana Torres</td>
-                            <td>Rehabilitación</td>
-                            <td>09/11/2025</td>
-                            <td><span class="badge badge-success">Activo</span></td>
+                            <td style="font-weight: bold;">Ana Torres</td>
+                            <td style="color: #6b7280;">Rehabilitación</td>
+                            <td style="color: #6b7280;">09/11/2025</td>
+                            <td>
+                                <div class="action-cell">
+                                    <span class="badge badge-success">Enviado</span>
+                                    <button class="btn-purple" onclick="goToUpdate('Ana Torres')">Actualizar rutina</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="font-weight: bold;">Josué Vargas</td>
+                            <td style="color: #6b7280;">Entrenamiento</td>
+                            <td style="color: #6b7280;">10/11/2025</td>
+                            <td>
+                                <div class="action-cell">
+                                    <span class="badge badge-success">Enviado</span>
+                                    <button class="btn-purple" onclick="goToUpdate('Josué Vargas')">Actualizar rutina</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="font-weight: bold;">Javier López</td>
+                            <td style="color: #6b7280;">Preparación</td>
+                            <td style="color: #6b7280;">10/11/2025</td>
+                            <td>
+                                <div class="action-cell">
+                                    <span class="badge badge-pending">Pendiente</span>
+                                    <button class="btn-purple" disabled>Actualizar rutina</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="font-weight: bold;">Elena García</td>
+                            <td style="color: #6b7280;">Fortalecimiento</td>
+                            <td style="color: #6b7280;">11/11/2025</td>
+                            <td>
+                                <div class="action-cell">
+                                    <span class="badge badge-pending">Pendiente</span>
+                                    <button class="btn-purple" disabled>Actualizar rutina</button>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Client Info PAGE -->
+<div id="updateClientPage" class="page">
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2 style="color: white; margin-bottom: 24px;">INVICTUS</h2>
+            <nav class="sidebar-nav">
+                <button onclick="changePage('dashboard')">Dashboard</button>
+                <button onclick="changePage('clients')">Clientes</button>
+                <button class="active" onclick="changePage('routines')">Rutinas</button>
+                <button onclick="changePage('agenda')">Agenda</button>
+                <button onclick="changePage('settings')">Configuración</button>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <div class="header-left">
+                    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+                    <h1>Rutinas / Actualización</h1>
+                </div>
+                <button class="btn btn-secondary" style="width: auto;" onclick="logout()">Cerrar sesión</button>
+            </div>
+
+            <div class="content">
+                <h2 class="title">Información de cliente</h2>
+
+                <div class="client-info-header">
+                    <span style="font-weight: bold; margin-right: 8px;">Nombre:</span> <span id="updateClientName" style="margin-right: 32px;">Carlos Gonzalez</span>
+                    <span style="font-weight: bold; margin-right: 8px;">Edad:</span> 25 años
+                </div>
+
+                <div class="comparison-container">
+                    <div class="info-column">
+                        <h3>Información actual</h3>
+
+                        <div class="info-row">
+                            <span class="info-label">Altura:</span>
+                            <span class="info-value">1.79 m</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Peso:</span>
+                            <span class="info-value">75 Kg</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Preferencias alimentarias:</span>
+                            <span class="info-value">Sin especificar</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Alergias:</span>
+                            <span class="info-value">Ninguna</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Foto</span>
+                            <div class="photo-placeholder">📷</div>
+                        </div>
+                    </div>
+
+                    <div class="info-column">
+                        <h3>Información enviada</h3>
+
+                        <div class="info-row">
+                            <span class="info-label">Altura:</span>
+                            <span class="info-value">1.79 m</span>
+                        </div>
+
+                        <div class="info-row highlight-change">
+                            <span class="info-label">Peso:</span>
+                            <span class="info-value">76 Kg</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Preferencias alimentarias:</span>
+                            <span class="info-value">Sin especificar</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Alergias:</span>
+                            <span class="info-value">Ninguna</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Foto</span>
+                            <div class="photo-placeholder">📷</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-cancel" onclick="changePage('routines')">Cancelar</button>
+                    <button class="btn btn-continue" onclick="changePage('assignRoutine')">Continuar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Asignar Rutina Page -->
+<div id="assignRoutinePage" class="page">
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2 style="color: white; margin-bottom: 24px;">INVICTUS</h2>
+            <nav class="sidebar-nav">
+                <button onclick="changePage('dashboard')">Dashboard</button>
+                <button onclick="changePage('clients')">Clientes</button>
+                <button class="active" onclick="changePage('routines')">Rutinas</button>
+                <button onclick="changePage('agenda')">Agenda</button>
+                <button onclick="changePage('settings')">Configuración</button>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <div class="header-left">
+                    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+                    <h1>Asignar y monitorear</h1>
+                </div>
+
+                <button class="header-icon-btn" onclick="toggleClientPanel()">
+                    📋
+                </button>
+
+                <button class="btn btn-secondary" style="width: auto; margin-left: 16px;" onclick="logout()">Cerrar sesión</button>
+            </div>
+
+            <div class="content">
+
+                <div class="assign-container">
+                    <div class="left-col">
+                        <div class="step-card">
+                            <h3>Paso 1: Seleccionar cliente y rutina</h3>
+
+                            <div class="form-group">
+                                <label>Cliente</label>
+                                <select disabled style="background-color: #f3f4f6;">
+                                    <option selected>Carlos Gonzalez</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Seleccionar rutina</label>
+                                <select>
+                                    <option>Fortalecimiento de espalda</option>
+                                    <option>Rehabilitación de rodilla</option>
+                                    <option>Cardio básico</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <h3>Paso 2: Establecer duración</h3>
+
+                            <div style="display: flex; gap: 16px;">
+                                <div class="form-group" style="flex: 1;">
+                                    <label>Fecha de inicio</label>
+                                    <input type="date" value="2025-11-17">
+                                </div>
+                                <div class="form-group" style="flex: 1;">
+                                    <label>Fecha de fin</label>
+                                    <input type="date" value="2025-12-15">
+                                </div>
+                            </div>
+
+                            <div class="assignment-summary">
+                                <div class="summary-text">
+                                    <strong>Resumen de la asignación</strong><br>
+                                    Cliente: Carlos Gonzalez<br>
+                                    Rutina: Fortalecimiento de espalda<br>
+                                    Duración: 29 días
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 16px;">
+                            <button class="btn btn-primary" style="background-color: #310b71;" onclick="alert('¡Rutina asignada con éxito!')">Asignar rutina</button>
+                            <button class="btn btn-cancel" onclick="changePage('routines')">Cancelar</button>
+                        </div>
+                    </div>
+
+                    <div class="right-col">
+                        <h3 style="margin-bottom: 16px; font-size: 18px; font-weight: bold;">Sesiones programadas</h3>
+
+                        <div class="session-list">
+                            <div class="session-item session-success">
+                                <div>
+                                    <span class="session-title text-success">Sesión 1: Lunes, 17/11</span>
+                                    <span class="session-date text-success">Estiramientos lumbares</span>
+                                </div>
+                                <span class="badge badge-success">✓ Completada</span>
+                            </div>
+
+                            <div class="session-item session-missed">
+                                <div>
+                                    <span class="session-title text-danger">Sesión 2: Miércoles, 19/11</span>
+                                    <span class="session-date text-danger">Plancha y elevación pélvica</span>
+                                </div>
+                                <input type="checkbox" style="width: 20px; height: 20px;">
+                            </div>
+
+                            <div class="session-item">
+                                <div>
+                                    <span class="session-title text-gray">Sesión 3: Viernes, 21/11</span>
+                                    <span class="session-date text-gray">Rotaciones de torso</span>
+                                </div>
+                                <input type="checkbox" style="width: 20px; height: 20px;">
+                            </div>
+
+                            <div class="session-item">
+                                <div>
+                                    <span class="session-title text-gray">Sesión 4: Lunes, 24/11</span>
+                                    <span class="session-date text-gray">Fortalecimiento completo</span>
+                                </div>
+                                <input type="checkbox" style="width: 20px; height: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="side-panel-overlay" id="panelOverlay" onclick="toggleClientPanel()"></div>
+        <div class="side-panel" id="clientSidePanel">
+            <button class="close-panel-btn" onclick="toggleClientPanel()">×</button>
+
+            <h2 style="margin-bottom: 24px; font-size: 24px;">Información del cliente</h2>
+
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div style="width: 80px; height: 80px; background: #e5e7eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; font-size: 32px;">👤</div>
+                <h3 style="font-size: 20px;">Carlos Gonzalez</h3>
+                <p style="color: #6b7280;">25 años</p>
+            </div>
+
+            <div class="info-row">
+                <span class="info-label">Altura</span>
+                <span class="info-value">1.79 m</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Peso Actual</span>
+                <span class="info-value" style="color: #2563eb; font-weight: bold;">76 Kg</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Alergias</span>
+                <span class="info-value">Ninguna</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Objetivo</span>
+                <span class="info-value">Fortalecimiento de espalda baja y corrección de postura.</span>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 24px 0;">
+
+            <h4 style="margin-bottom: 12px;">Historial reciente</h4>
+            <div class="session-item session-success" style="margin-bottom: 8px;">
+                <span style="font-size: 12px;">Plan anterior completado</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Agenda Page -->
+<div id="agendaPage" class="page">
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2 style="color: white; margin-bottom: 24px;">INVICTUS</h2>
+            <nav class="sidebar-nav">
+                <button onclick="changePage('dashboard')">Dashboard</button>
+                <button onclick="changePage('routines')">Rutinas</button>
+                <button class="active" onclick="changePage('agenda')">Agenda</button> <button onclick="changePage('clients')">Clientes</button>
+                <button onclick="changePage('settings')">Configuración</button>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <div class="header-left">
+                    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+                    <h1>Agenda</h1>
+                </div>
+                <button onclick="simularWhatsapp()" style="background:none; border:none; font-size:24px; cursor:pointer; margin-right:16px;" title="Simular mensaje WhatsApp">
+                    🔔
+                </button>
+
+                <button class="btn btn-secondary" style="width: auto;" onclick="logout()">Cerrar sesión</button>
+                <button class="btn-add-appt" onclick="alert('Abrir modal para crear cita...')">
+                    <span>+</span> Añadir cita
+                </button>
+            </div>
+
+            <div class="content">
+
+                <div class="calendar-wrapper">
+                    <div class="calendar-header-row">
+                        <div class="day-header">Lunes</div>
+                        <div class="day-header">Martes</div>
+                        <div class="day-header">Miércoles</div>
+                        <div class="day-header">Jueves</div>
+                        <div class="day-header">Viernes</div>
+                    </div>
+
+                    <div class="calendar-body">
+
+                        <div class="day-column">
+                            </div>
+
+                        <div class="day-column">
+                            <div class="appt-card card-green">
+                                <span class="appt-time">09:00 AM - 10:00 AM</span>
+                                <span class="appt-client">Carlos González</span>
+                                <span class="appt-staff">Fisio: Raúl</span>
+                            </div>
+
+                            <div class="appt-card card-green" style="opacity: 0.6;">
+                                <span class="appt-time">11:00 AM - 12:00 PM</span>
+                                <span class="appt-client">Espacio Reservado</span>
+                                <span class="appt-staff">Fisio: Raúl</span>
+                            </div>
+                        </div>
+
+                        <div class="day-column">
+                            <div style="height: 150px;"></div>
+
+                            <div id="cita-maria" class="appt-card card-red">
+                                <span class="appt-time">04:00 PM - 05:00 PM</span>
+                                <span class="appt-client">María López</span>
+                                <span class="appt-staff">Entrenador: Juan</span>
+                                <div style="margin-top:4px; font-size:11px;">⚠️ Pago pendiente</div>
+                            </div>
+                        </div>
+
+                        <div class="day-column">
+                             <div style="height: 80px;"></div>
+
+                             <div class="appt-card card-blue">
+                                <span class="appt-time">10:30 AM - 11:30 AM</span>
+                                <span class="appt-client">Ana Torres</span>
+                                <span class="appt-staff">Fisio: Raúl</span>
+                            </div>
+                        </div>
+
+                        <div class="day-column">
+                            <div class="appt-card card-green">
+                                <span class="appt-time">08:00 AM - 09:00 AM</span>
+                                <span class="appt-client">Nuevo Ingreso</span>
+                                <span class="appt-staff">Fisio: Sofía</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -542,6 +1325,7 @@
                 <button onclick="changePage('dashboard')">Dashboard</button>
                 <button onclick="changePage('clients')">Clientes</button>
                 <button onclick="changePage('routines')">Rutinas</button>
+                <button onclick="changePage('agenda')">Agenda</button>
                 <button class="active" onclick="changePage('settings')">Configuración</button>
             </nav>
         </div>
@@ -557,10 +1341,10 @@
 
             <div class="content">
                 <h2 class="title">Configuración</h2>
-                
+
                 <div class="stat-card" style="max-width: 500px;">
                     <h3 style="margin-bottom: 16px; font-size: 18px;">Perfil</h3>
-                    
+
                     <div class="form-group">
                         <label>Nombre completo</label>
                         <input type="text" value="Raúl" style="background-color: #f3f4f6;">
@@ -585,7 +1369,19 @@
         </div>
     </div>
 </div>
-
+<div id="notificationModal" class="modal-overlay">
+    <div class="modal-box">
+        <h3 class="modal-title">Cita cancelada</h3>
+        <p class="modal-text">
+            María ha cancelado su cita en el siguiente horario:<br>
+            Miércoles - 04:00pm
+        </p>
+        <div class="modal-buttons">
+            <button class="btn-text-gray" onclick="closeModal()">Ok</button>
+            <button class="btn-text-blue" onclick="procesarCancelacion()">Ver agenda</button>
+        </div>
+    </div>
+</div>
 <script>
     function togglePassword() {
         const passwordInput = document.getElementById('password');
@@ -620,6 +1416,9 @@
         document.getElementById('clientsPage').classList.remove('active');
         document.getElementById('routinesPage').classList.remove('active');
         document.getElementById('settingsPage').classList.remove('active');
+        document.getElementById('updateClientPage').classList.remove('active');
+        document.getElementById('assignRoutinePage').classList.remove('active');
+        document.getElementById('agendaPage').classList.remove('active');
 
         if (page === 'dashboard') {
             document.getElementById('dashboardPage').classList.add('active');
@@ -629,12 +1428,71 @@
             document.getElementById('routinesPage').classList.add('active');
         } else if (page === 'settings') {
             document.getElementById('settingsPage').classList.add('active');
+        } else if (page === 'updateClient') {
+            document.getElementById('updateClientPage').classList.add('active');
+        } else if (page === 'assignRoutine') {
+            document.getElementById('assignRoutinePage').classList.add('active');
+        } else if (page === 'agenda') {
+            document.getElementById('agendaPage').classList.add('active');
+        } else if (page === 'clients') {
+            document.getElementById('clientsPage').classList.add('active');
         }
+    }
+
+    function goToUpdate(clientName) {
+        document.getElementById('updateClientName').innerText = clientName;
+        changePage('updateClient');
     }
 
     function toggleSidebar() {
         const sidebar = document.querySelector('.sidebar');
         sidebar.classList.toggle('hidden');
+    }
+
+    function toggleClientPanel() {
+        const panel = document.getElementById('clientSidePanel');
+        const overlay = document.getElementById('panelOverlay');
+
+        if (panel.classList.contains('open')) {
+            panel.classList.remove('open');
+            overlay.classList.remove('open');
+        } else {
+            panel.classList.add('open');
+            overlay.classList.add('open');
+        }
+    }
+
+    // 1. Muestra la modal simulando que llegó un mensaje
+    function simularWhatsapp() {
+        document.getElementById('notificationModal').style.display = 'flex';
+    }
+
+    // 2. Cierra la modal sin hacer nada
+    function closeModal() {
+        document.getElementById('notificationModal').style.display = 'none';
+    }
+
+    // 3. LA LÓGICA PRINCIPAL: Navega, borra y actualiza
+    function procesarCancelacion() {
+        // A. Cerrar modal
+        closeModal();
+
+        // B. Ir a la agenda
+        changePage('agenda');
+
+        // C. Buscar la cita de María
+        const citaCard = document.getElementById('cita-maria');
+
+        if (citaCard) {
+            // D. Agregar animación de desaparición
+            citaCard.classList.add('fade-out');
+
+            // E. Esperar a que termine la animación (500ms) y reemplazar por espacio libre
+            setTimeout(() => {
+                // Eliminar la cita original del DOM
+                citaCard.remove();
+            }, 500);
+        }
     }
 </script>
 
