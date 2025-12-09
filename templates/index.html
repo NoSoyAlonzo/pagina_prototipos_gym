@@ -186,7 +186,7 @@
         }
         /*  whats app section config*/
 
-        
+
 
         #whatsapp .settings-section h3 {
             font-size: 1.5rem;
@@ -212,7 +212,7 @@
             border: 1px solid #e2e8f0;
             padding: 2rem;
             transition: box-shadow 0.3s ease;
-        
+
         }
         .connection-status {
             display: flex;
@@ -323,17 +323,17 @@
     .whatsapp-card.card {
         padding: 1.5rem;
     }
-    
+
     .connection-status {
         gap: 0.75rem;
     }
-    
+
     .status-message {
         margin-left: 0;
         width: 100%;
         order: 3;
     }
-    
+
     .btn-disconnect {
         margin-left: auto;
     }
@@ -370,7 +370,7 @@
     margin: 0 auto;
     width: 100%;
 }
-            
+
         }
 
         .page {
@@ -867,8 +867,8 @@
         <div class="login-box">
             <div class="login-header">
                 <img class ="invictus_logoL"src="/pagina_prototipos_gym/css/imagenes/invictusLogo.jpeg">
-                
-                
+
+
             </div>
 
             <div class="form-group">
@@ -1511,7 +1511,7 @@
             <div class="content">
                 <h2 class="title">Configuración</h2>
 
-                <div class="stat-card" style="max-width: 500px;">
+                <div class="stat-card" style="max-width: 600px;">
                     <h3 style="margin-bottom: 16px; font-size: 18px;">Perfil</h3>
 
                     <div class="form-group">
@@ -1534,33 +1534,33 @@
 
                     <button class="btn btn-primary" style="margin-top: 16px;">Guardar cambios</button>
                 </div>
+
+                 <h3 class="title">Integración con WhatsApp</h3>
+                 <div class="whatsapp_card card" style="max-width: 600px;">
+                   <div class="connection-status" >
+                     <span class="status-indicator status-ok"></span>
+                     <p>Estado de la conexión</p>
+                     <span class="status-message">Conectado correctamente</span>
+                     <button class="btn-disconnect">Desconectar</button>
+                   </div>
+
+                   <p class="section-subtitle">Mensaje de bienvenida automatizado</p>
+                   <span class="section-description"
+                     >Este mensaje se envía a los clientes nuevos cuando se
+                     registran.</span
+                   >
+
+                   <label for="cuerpo">Cuerpo del mensaje</label>
+                   <textarea id="cuerpo" rows="5">
+                       ¡Hola [NOMBRE_CLIENTE]! Bienvenido. Soy Raúl, tu fisioterapeuta. Gracias por ponerte en contacto, primero me gustarías saber algunas cosas sobre ti, necesito que me respondas con tu altura y peso estimados.</textarea
+                   >
+                 </div>
             </div>
-            
+
         </div>
-         <section id="whatsapp" class="settings-section">
-          <h3>Integración con WhatsApp</h3>
-          <div class="whatsapp_card card">
-            <div class="connection-status">
-              <span class="status-indicator status-ok"></span>
-              <p>Estado de la conexión</p>
-              <span class="status-message">Conectado correctamente</span>
-              <button class="btn-disconnect">Desconectar</button>
-            </div>
 
-            <p class="section-subtitle">Mensaje de bienvenida automatizado</p>
-            <span class="section-description"
-              >Este mensaje se envía a los clientes nuevos cuando se
-              registran.</span
-            >
-
-            <label for="cuerpo">Cuerpo del mensaje</label>
-            <textarea id="cuerpo" rows="5">
-                ¡Hola [NOMBRE_CLIENTE]! Bienvenido. Soy Raúl, tu fisioterapeuta. Gracias por ponerte en contacto, primero me gustarías saber algunas cosas sobre ti, necesito que me respondas con tu altura y peso estimados.</textarea
-            >
-          </div>
-        </section>
     </div>
-    
+
 </div>
 <div id="notificationModal" class="modal-overlay">
     <div class="modal-box">
