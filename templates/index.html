@@ -186,9 +186,7 @@
         }
         /*  whats app section config*/
 
-        #whatsapp.settings-section {
-            margin-bottom: 2rem;
-        }
+        
 
         #whatsapp .settings-section h3 {
             font-size: 1.5rem;
@@ -196,10 +194,17 @@
             color: #2d3748;
             margin-bottom: 1.5rem;
 }
-        .whatsapp{
-            margin-left: 256px;
-            flex: 2;
+       #whatsapp {
+            flex: 1;
+            max-width: 800px; /* Limita el ancho máximo */
+            margin: 0 auto; /* Centra dentro de su espacio flex */
         }
+        .settings-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
         .whatsapp_card.card {
             background: white;
             border-radius: 12px;
@@ -358,7 +363,13 @@
         }
 
         .content {
-            padding: 32px;
+       /* CONTENEDOR PRINCIPAL - DISEÑO LADO A LADO */
+.content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
             
         }
 
@@ -880,6 +891,7 @@
 <div id="dashboardPage" class="page">
     <div class="dashboard-container">
         <div class="sidebar">
+            <img class="logoRojo" src="/pagina_prototipos_gym/css/imagenes/Rlogo.jpeg">
             <h2 style="color: white; margin-bottom: 24px;">INVICTUS</h2>
             <nav class="sidebar-nav">
                 <button class="active" onclick="changePage('dashboard')">Dashboard</button>
@@ -1523,6 +1535,7 @@
                     <button class="btn btn-primary" style="margin-top: 16px;">Guardar cambios</button>
                 </div>
             </div>
+            
         </div>
          <section id="whatsapp" class="settings-section">
           <h3>Integración con WhatsApp</h3>
