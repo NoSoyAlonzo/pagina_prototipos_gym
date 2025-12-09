@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #2f3031;
+            background-color: #f3f6f9;
         }
 
         .hidden {
@@ -56,8 +56,8 @@
             font-size: 12px;
         }
         /* imagen para el loogo invictus*/
-        #invictus_login{
-            width: 50px;
+        .invictus_logoL{
+            width: 250px;
         }
         .form-group {
             margin-bottom: 16px;
@@ -133,10 +133,13 @@
             display: flex;
             min-height: 100vh;
         }
-
+        /* imagen logo 2 */
+        .dashboard_logoL{
+            width: 50px;
+        }
         .sidebar {
             width: 256px;
-            background-color: #1f2937;
+            background-color: #000000;
             color: white;
             padding: 24px;
             position: fixed;
@@ -181,7 +184,155 @@
             margin-left: 256px;
             flex: 1;
         }
+        /*  whats app section config*/
 
+        #whatsapp.settings-section {
+            margin-bottom: 2rem;
+        }
+
+        #whatsapp .settings-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+}
+        .whatsapp{
+            margin-left: 256px;
+            flex: 2;
+        }
+        .whatsapp_card.card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            transition: box-shadow 0.3s ease;
+        
+        }
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .status-indicator.status-ok {
+            background-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+
+        .connection-status p {
+            margin: 0;
+            font-weight: 500;
+            color: #4a5568;
+        }
+
+.status-message {
+    color: #10b981;
+    font-weight: 500;
+    margin-left: auto;
+}
+
+/* ===== BOTÓN DESCONECTAR ===== */
+.btn-disconnect {
+    background: #fed7d7;
+    color: #c53030;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-disconnect:hover {
+    background: #feb2b2;
+    transform: translateY(-1px);
+}
+
+.btn-disconnect:active {
+    transform: translateY(0);
+}
+
+/* ===== TÍTULOS Y DESCRIPCIÓN ===== */
+.section-subtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.section-description {
+    color: #718096;
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* ===== TEXTAREA DEL MENSAJE ===== */
+#whatsapp label[for="cuerpo"] {
+    display: block;
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+}
+
+#whatsapp #cuerpo {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #2d3748;
+    background: #f8fafc;
+    resize: vertical;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+#whatsapp #cuerpo:focus {
+    outline: none;
+    border-color: #4299e1;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+#whatsapp #cuerpo::placeholder {
+    color: #a0aec0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .whatsapp-card.card {
+        padding: 1.5rem;
+    }
+    
+    .connection-status {
+        gap: 0.75rem;
+    }
+    
+    .status-message {
+        margin-left: 0;
+        width: 100%;
+        order: 3;
+    }
+    
+    .btn-disconnect {
+        margin-left: auto;
+    }
+}
         .header {
             background: white;
             border-bottom: 1px solid #e5e7eb;
@@ -208,6 +359,7 @@
 
         .content {
             padding: 32px;
+            
         }
 
         .page {
@@ -528,7 +680,7 @@
             top: 0; right: 0;
             width: 400px;
             height: 100vh;
-            background: white;
+            background: rgb(12, 11, 11);
             box-shadow: -5px 0 15px rgba(0,0,0,0.1);
             z-index: 201;
             transform: translateX(100%); /* Fuera de pantalla */
@@ -703,9 +855,8 @@
     <div class="login-container">
         <div class="login-box">
             <div class="login-header">
-                <img class ="invictus_login"src="/pagina_prototipos_gym/css/imagenes/invictusLogo.jpeg">
-                <h1>INVICTUS</h1>
-                <p>GYM • TRAINING CENTER</p>
+                <img class ="invictus_logoL"src="/pagina_prototipos_gym/css/imagenes/invictusLogo.jpeg">
+                
                 
             </div>
 
@@ -743,6 +894,7 @@
             <div class="header">
                 <div class="header-left">
                     <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+                    <img class="dashboard_logoL" src="/pagina_prototipos_gym/css/imagenes/invictusLogo2.jpeg">
                     <h1>Dashboard</h1>
                 </div>
                 <button class="btn btn-secondary" style="width: auto;" onclick="logout()">Cerrar sesión</button>
@@ -1372,7 +1524,30 @@
                 </div>
             </div>
         </div>
+         <section id="whatsapp" class="settings-section">
+          <h3>Integración con WhatsApp</h3>
+          <div class="whatsapp_card card">
+            <div class="connection-status">
+              <span class="status-indicator status-ok"></span>
+              <p>Estado de la conexión</p>
+              <span class="status-message">Conectado correctamente</span>
+              <button class="btn-disconnect">Desconectar</button>
+            </div>
+
+            <p class="section-subtitle">Mensaje de bienvenida automatizado</p>
+            <span class="section-description"
+              >Este mensaje se envía a los clientes nuevos cuando se
+              registran.</span
+            >
+
+            <label for="cuerpo">Cuerpo del mensaje</label>
+            <textarea id="cuerpo" rows="5">
+                ¡Hola [NOMBRE_CLIENTE]! Bienvenido. Soy Raúl, tu fisioterapeuta. Gracias por ponerte en contacto, primero me gustarías saber algunas cosas sobre ti, necesito que me respondas con tu altura y peso estimados.</textarea
+            >
+          </div>
+        </section>
     </div>
+    
 </div>
 <div id="notificationModal" class="modal-overlay">
     <div class="modal-box">
